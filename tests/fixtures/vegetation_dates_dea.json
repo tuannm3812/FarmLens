@@ -1,0 +1,41 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "data": [
+          {
+            "time": "2025-10-19 23:55:40 UTC",
+            "bands": {
+              "non_photosynthetic_vegetation": 23,
+              "photosynthetic_vegetation": 39,
+              "ue": 10,
+              "bare_soil": 36,
+              "land": {
+                "Sea, Mainland or Island": "mainland"
+              }
+            }
+          }
+        ],
+        "lon": 148.6011499908547,
+        "lat": -32.25684999954283,
+        "data_available_for_dates": [
+          "2026-08-28",
+          "2026-09-29",
+          "2026-10-07"
+        ],
+        "data_links": [
+          "https://data.dea.ga.gov.au/?prefix=derivative/ga_ls_fc_3/2-5-1/091/082/2025/10/19"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          148.6011,
+          -32.2569
+        ]
+      }
+    }
+  ]
+}

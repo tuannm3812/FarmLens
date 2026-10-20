@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="144" viewBox="0 0 240 144" role="img" aria-labelledby="title desc">
+<title id="title">Natural and semi-natural vegetation — symbolic illustration</title>
+<desc id="desc">A stylised land-cover category, not an image of any selected location. Terrain, structures, vegetation and proportions are illustrative.</desc>
+<defs><clipPath id="surface"><path d="M120 22 222 73 120 124 18 73Z"/></clipPath></defs>
+<ellipse cx="120" cy="132" rx="80" ry="7" fill="#252a26" opacity=".045"/>
+<path d="M18 73v9l102 51v-9Z" fill="#9bad84"/>
+<path d="M120 124v9l102-51v-9Z" fill="#d5dfba"/>
+<path d="M18 73 120 22l102 51-102 51Z" fill="#dce4c9"/>
+<path clip-path="url(#surface)" d="M36 81c33-21 49-8 75-24s48-13 75 8M75 102c34-23 72-6 111-31" fill="none" stroke="#c1d0ac" stroke-width="11"/>
+<g stroke="#355b48" stroke-width="2" stroke-linecap="round"><path d="M76 73V49m59 41V62m42 10V46"/><path d="M50 82v-7m0 4-4-4m4 3 4-4m60 37v-7m0 4-4-4m4 3 4-4"/></g>
+<g><path d="M76 32c-17 0-23 14-17 24-4 14 32 21 36 3 10-14-2-27-19-27Z" fill="#809b68"/><path d="M76 32c-9 1-16 10-13 22 2 9 16 13 24 7-14 3-19-12-11-29Z" fill="#5b7952"/>
+<path d="M135 48c-15-2-25 13-18 23-3 13 32 19 36 3 9-14-3-25-18-26Z" fill="#9daf78"/><path d="M177 28c-13-1-23 12-16 23-2 13 29 17 33 2 9-12-2-23-17-25Z" fill="#658b65"/></g>
+</svg>

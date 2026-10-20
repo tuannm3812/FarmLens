@@ -1,0 +1,85 @@
+{
+  "results": [
+    {
+      "layerId": 1,
+      "layerName": "SND_000_005_EV_N_P_AU_TRN_N",
+      "displayFieldName": "",
+      "attributes": {
+        "Classify.Pixel Value": "67.000000",
+        "Classify.Class value": "3"
+      }
+    },
+    {
+      "layerId": 2,
+      "layerName": "SND_000_005_95_N_P_AU_TRN_N",
+      "displayFieldName": "",
+      "attributes": {
+        "Classify.Pixel Value": "71.000000",
+        "Classify.Class value": "3"
+      }
+    },
+    {
+      "layerId": 3,
+      "layerName": "SND_000_005_05_N_P_AU_TRN_N",
+      "displayFieldName": "",
+      "attributes": {
+        "Classify.Pixel Value": "46.000000",
+        "Classify.Class value": "2"
+      }
+    },
+    {
+      "layerId": 5,
+      "layerName": "SND_005_015_EV_N_P_AU_TRN_N",
+      "displayFieldName": "",
+      "attributes": {
+        "Classify.Pixel Value": "67.000000",
+        "Classify.Class value": "3"
+      }
+    },
+    {
+      "layerId": 6,
+      "layerName": "SND_005_015_95_N_P_AU_TRN_N",
+      "displayFieldName": "",
+      "attributes": {
+        "Classify.Pixel Value": "73.000000",
+        "Classify.Class value": "3"
+      }
+    },
+    {
+      "layerId": 7,
+      "layerName": "SND_005_015_05_N_P_AU_TRN_N",
+      "displayFieldName": "",
+      "attributes": {
+        "Classify.Pixel Value": "46.000000",
+        "Classify.Class value": "2"
+      }
+    },
+    {
+      "layerId": 9,
+      "layerName": "SND_015_030_EV_N_P_AU_TRN_N",
+      "displayFieldName": "",
+      "attributes": {
+        "Classify.Pixel Value": "63.000000",
+        "Classify.Class value": "3"
+      }
+    },
+    {
+      "layerId": 10,
+      "layerName": "SND_015_030_95_N_P_AU_TRN_N",
+      "displayFieldName": "",
+      "attributes": {
+        "Classify.Pixel Value": "73.000000",
+        "Classify.Class value": "3"
+      }
+    },
+    {
+      "layerId": 11,
+      "layerName": "SND_015_030_05_N_P_AU_TRN_N",
+      "displayFieldName": "",
+      "attributes": {
+        "Classify.Pixel Value": "37.000000",
+        "Classify.Class value": "1"
+      }
+    }
+  ]
+}

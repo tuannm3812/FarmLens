@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="144" viewBox="0 0 240 144" role="img" aria-labelledby="title desc">
+<title id="title">Aquatic vegetation — symbolic illustration</title>
+<desc id="desc">A stylised land-cover category, not an image of any selected location. Terrain, structures, vegetation and proportions are illustrative.</desc>
+<defs><clipPath id="surface"><path d="M120 22 222 73 120 124 18 73Z"/></clipPath></defs>
+<ellipse cx="120" cy="132" rx="80" ry="7" fill="#252a26" opacity=".045"/>
+<path d="M18 73v9l102 51v-9Z" fill="#8caaa0"/>
+<path d="M120 124v9l102-51v-9Z" fill="#c6d8bd"/>
+<path d="M18 73 120 22l102 51-102 51Z" fill="#d5dfbd"/>
+<path d="M55 59c32-17 55 13 86-7 21-14 43-4 70 15l11 6-102 51-64-32c25 3 45-17 17-24Z" fill="#9ec0c7"/>
+<g fill="none" stroke="#edf3ed" stroke-width="2" stroke-linecap="round"><path d="M94 85c8-5 12 5 21 0m24 9c8-5 12 5 21 0m3-23c8-5 12 5 21 0"/></g>
+<g stroke="#4f7655" stroke-width="2" stroke-linecap="round"><path d="M74 71V40m0 20-8-9m8 4 8-10M98 81V49m0 19-7-8m7 1 6-9M157 61V31m0 20-6-8m6 3 7-9"/></g>
+<g fill="#92703b"><rect x="71" y="32" width="6" height="15" rx="3"/><rect x="95" y="41" width="6" height="15" rx="3"/><rect x="154" y="23" width="6" height="15" rx="3"/></g>
+</svg>

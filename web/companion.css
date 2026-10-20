@@ -1,0 +1,38 @@
+/* Friendly guide and real imagery share the existing FarmLens palette. */
+.land-context{display:grid;grid-template-columns:minmax(0,1fr) 175px;border:1px solid var(--line);border-radius:12px;background:var(--paper);overflow:hidden;min-width:0}
+.land-context .land-card{border:0;border-radius:0;height:auto}
+#land-imagery:empty{display:none}.land-context:has(#land-imagery:empty){grid-template-columns:1fr}
+.land-image{margin:0;height:100%;display:flex;flex-direction:column;background:#f1eee3;border-left:1px solid var(--line)}
+.imagery-open{display:block;position:relative;flex:1;width:100%;min-height:160px;overflow:hidden;background:#e4e6dc;border:0;padding:0;cursor:zoom-in}
+.imagery-open:disabled{cursor:default;opacity:1}.imagery-open img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover}
+.imagery-open img[hidden]{display:none}.imagery-state{display:block;font-size:11px;padding:18px;line-height:1.6;color:#4e594e}
+.imagery-pin{position:absolute;left:50%;top:50%;width:12px;height:12px;transform:translate(-50%,-50%);background:#edc34c;border:2px solid white;border-radius:50%;box-shadow:0 0 0 4px #244b3d88;pointer-events:none}
+.imagery-expand{position:absolute;bottom:9px;left:9px;background:#fff9e9;padding:5px 8px;border-radius:5px;font-size:10px;color:#244b3d;font-weight:650}
+.land-image figcaption{padding:9px 10px;font-size:9px;line-height:1.6;color:var(--muted)}
+.land-image figcaption span,.land-image figcaption a{display:block}.land-image figcaption a{color:var(--blue);font-size:9px}
+.imagery-dialog{max-width:820px;width:calc(100% - 32px);padding:24px;border:1px solid var(--line);border-radius:20px;background:var(--paper);color:var(--ink)}
+.imagery-dialog h2{font-size:22px;margin-top:6px}.imagery-large-frame{position:relative;margin:14px 0;border-radius:12px;overflow:hidden;background:#e4e6dc}
+.imagery-large-frame img{display:block;width:100%;aspect-ratio:5/3;object-fit:contain}
+.imagery-dialog p,.imagery-dialog details{font-size:12px;line-height:1.7;color:var(--muted);margin-top:9px}
+dialog::backdrop{background:#162d26a6;backdrop-filter:blur(3px)}
+.ask-button{gap:8px!important;border-radius:22px!important;padding:7px 13px 7px 7px!important;background:#edc34c!important;color:#244b3d!important}
+.ask-button img{border-radius:50%;flex-shrink:0}.ask-caption{display:block;text-align:right;font-size:10px;color:var(--muted);margin-top:6px}
+.companion-dialog{width:min(460px,calc(100% - 24px));max-width:460px;max-height:calc(100dvh - 40px);margin:20px 20px 20px auto;padding:0;border:1px solid #d7d7c8;border-radius:22px;background:#fffdf7;color:var(--ink);overflow:hidden;box-shadow:0 20px 80px #172d2633}
+.companion-dialog[open]{display:flex;flex-direction:column}.guide-head{display:flex;align-items:center;gap:13px;padding:22px 22px 18px;background:#f4efd9;border-bottom:1px solid #e3dfc9;flex-shrink:0}
+.guide-head>img{flex-shrink:0}.guide-head .eyebrow{font-size:9px;color:#49634c}.guide-head h2{font:750 26px Manrope,Inter,sans-serif;letter-spacing:-.8px;margin:4px 0}.guide-head p{font-size:11px;color:var(--muted)}.guide-head .icon-button{margin-left:auto;align-self:flex-start}
+.guide-body{padding:18px 22px;overflow-y:auto;overscroll-behavior:contain;min-height:0}.guide-context{font-size:10px;color:#5c725e;margin-bottom:10px}.guide-intro{font-size:13px;line-height:1.65;max-width:330px}
+.guide-starters{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:16px 0}.guide-starters button{padding:10px 9px;border:1px solid #dedbc8;background:#fffdf7;border-radius:10px;color:#355843;font:550 11px Inter,sans-serif;text-align:left;cursor:pointer}
+.guide-starters button:hover{background:#f5edce;border-color:#c7b465}.guide-starters button:disabled{opacity:.5}
+.guide-turn{border-top:1px solid var(--line);padding:14px 0}.guide-question{background:#f1f3e9;border-radius:10px 10px 0 10px;font-size:11px!important;line-height:1.6;padding:9px 12px;margin:0 0 15px 35px;color:#52624e;overflow-wrap:anywhere}
+.guide-turn h3{font:700 15px Manrope,Inter,sans-serif;letter-spacing:-.25px;margin:0 0 8px}.guide-turn>p:not(.guide-question){font-size:12px;line-height:1.8;overflow-wrap:anywhere}.guide-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}.guide-links a{font-size:10px;color:var(--blue)}
+.guide-action{border:0;background:#eaf0e6;color:#30543e;padding:9px 12px;border-radius:8px;font-size:11px;cursor:pointer;margin-top:12px}
+.guide-extra{border-top:1px solid var(--line);padding-top:15px;margin-top:12px}.guide-extra>.text-button{font-size:11px;color:#355843}.guide-extra details{margin-top:12px;font-size:10px;color:var(--muted);line-height:1.7}.guide-extra details p{margin-top:8px}
+.guide-bottom{padding:15px 22px;background:#fffdf7;border-top:1px solid var(--line);flex-shrink:0}.guide-bottom form{display:flex;align-items:center;background:#fff;border:1px solid #c5cbb9;border-radius:12px;overflow:hidden}
+.guide-bottom input{font:12px Inter,sans-serif;background:transparent;border:0;min-width:0;flex:1;padding:13px 12px;width:auto}.guide-bottom button{display:grid;place-items:center;margin:4px;border:0;background:#edc34c;color:#244b3d;width:34px;height:34px;border-radius:9px;cursor:pointer}.guide-bottom svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.7}.guide-bottom>p{font-size:9px;color:var(--muted);line-height:1.5;margin:9px 0 0}
+.site-brand small{font-size:8px;letter-spacing:1px}
+@media(min-width:1600px){.land-overview{grid-template-columns:1fr}.land-context .land-card{height:auto}}
+@media(max-width:550px){.land-context{grid-template-columns:1fr}.land-image{border-left:0;border-top:1px solid var(--line)}.imagery-open{min-height:140px}.land-image figcaption{display:flex;justify-content:space-between;gap:10px}.imagery-dialog{padding:17px}.imagery-dialog h2{font-size:19px}.ask-caption{align-self:center;margin-top:0}.companion-dialog{max-height:calc(100dvh - 20px);margin:auto;border-radius:18px}.guide-head{padding:16px}.guide-body{padding:15px 16px}.guide-bottom{padding:12px 16px}.guide-head h2{font-size:23px}}
+
+.cover-title{display:flex;align-items:center;gap:8px}.cover-title .land-icon{width:20px;height:20px;flex-shrink:0;color:var(--green)}
+.context-extras{display:grid;grid-template-columns:1fr 1fr;gap:12px}.context-extras>details{margin:12px 0 0;min-width:0}.context-extras>details[open]{grid-column:1/-1}.context-extras>details>summary{padding:12px}.context-extras .insight-kicker,.context-extras .seasonal-link{font-size:0}.context-extras .seasonal-link:after{font-size:16px}.search-privacy p{margin-top:7px}.search-privacy summary{cursor:pointer}
+@media(max-width:550px){.context-extras{grid-template-columns:1fr;gap:0}.context-extras>details[open]{grid-column:auto}}

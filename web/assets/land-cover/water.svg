@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="144" viewBox="0 0 240 144" role="img" aria-labelledby="title desc">
+<title id="title">Water — symbolic illustration</title>
+<desc id="desc">A stylised land-cover category, not an image of any selected location. Terrain, structures, vegetation and proportions are illustrative.</desc>
+<defs><clipPath id="surface"><path d="M120 22 222 73 120 124 18 73Z"/></clipPath></defs>
+<ellipse cx="120" cy="132" rx="80" ry="7" fill="#252a26" opacity=".045"/>
+<path d="M18 73v9l102 51v-9Z" fill="#6f9eae"/>
+<path d="M120 124v9l102-51v-9Z" fill="#a9c9d0"/>
+<path d="M18 73 120 22l102 51-102 51Z" fill="#a7c8d0"/>
+<g clip-path="url(#surface)">
+<path d="M24 76c41-16 74 4 111-14s61-5 81 6M61 95c25-13 42 5 70-8s44-3 52 1" fill="none" stroke="#8bb5c1" stroke-width="11"/>
+<g fill="none" stroke="#f0f6ee" stroke-width="2.5" stroke-linecap="round"><path d="M62 68c10-7 16 7 26 0m25-22c10-7 16 7 26 0m18 28c10-7 16 7 26 0m-72 27c10-7 16 7 26 0"/></g>
+</g>
+</svg>

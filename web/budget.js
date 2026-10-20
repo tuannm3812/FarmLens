@@ -1,0 +1,37 @@
+/* Editable budgets. Archived figures are an explicit example, never automatic farm forecasts. */
+(function(root){
+ 'use strict';
+ const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ const money=v=>typeof v==='number'&&Number.isFinite(v)?v.toLocaleString('en-AU',{style:'currency',currency:'AUD',maximumFractionDigits:0}):'—';
+ const num=v=>typeof v==='number'&&Number.isFinite(v)?v.toLocaleString('en-AU',{maximumFractionDigits:2}):'—';
+ function render(result,exampleLoaded){
+  const cards=result.rows.map(r=>r.status!=='available'?`<article class="budget-result"><h3>${esc(r.name)}</h3><p class="insight-empty">${esc(r.reason)}</p></article>`:`<article class="budget-result"><h3>${esc(r.name)}</h3><span class="insight-caption">Gross margin / ha</span><strong class="budget-margin ${r.margin_aud_ha<0?'is-loss':''}">${money(r.margin_aud_ha)}</strong><p class="insight-caption">Revenue ${money(r.revenue_aud_ha)} · costs ${money(r.cost_aud_ha)}</p><dl class="break-even"><div><dt>Break-even yield</dt><dd>${r.break_even_yield_any?'Any yield (zero margin)':r.break_even_yield_t_ha==null?'Not reachable at this price':num(r.break_even_yield_t_ha)+' t/ha'}</dd></div><div><dt>Break-even price</dt><dd>${r.break_even_price_aud_t==null?'No positive yield':money(r.break_even_price_aud_t)+'/t'}</dd></div></dl><div class="budget-sensitivity" aria-label="Low, base and high sensitivity scenarios">${[['low','Low'],['base','Base'],['high','High']].map(([k,label])=>`<div><span>${label}</span><b class="${r.sensitivity[k]<0?'is-loss':''}">${money(r.sensitivity[k])}</b></div>`).join('')}</div></article>`).join('');
+  return `${exampleLoaded?'<p class="budget-warning">Based on 2012 archived examples, including any edits. Not current farm returns.</p>':''}<div class="budget-results-grid">${cards}</div><p class="insight-caption">AUD/ha, excluding GST. Low/high change both yield and price by −20%/+20%; other costs per hectare stay fixed. These are sensitivity cases, not probability bounds.</p><p class="insight-caption">Gross margin excludes overheads, finance and tax. Crop suitability and water feasibility are assessed separately.</p>`;
+ }
+ function mount(metadata,api){
+  const $=id=>document.getElementById(id),profiles=metadata.profiles;
+  let context=null,lastKey=null,version=0,controller=null,exampleLoaded=false;
+  const fields=[['yield_t_ha','Yield · t/ha',30],['price_aud_t','Selling price · $/t',10000],['variable_aud_ha','Variable costs · $/ha',100000],['selling_aud_t','Extra selling costs · $/t',10000],['irrigation_aud_ha','Irrigation costs · $/ha',100000]];
+  const field=(crop,[key,label,max])=>`<label>${label}<input data-crop="${crop}" data-field="${key}" type="number" min="0" max="${max}" step="0.01" placeholder="Enter value" aria-label="${esc(profiles[crop].name+' '+label)}"></label>`;
+  $('budget-form-host').innerHTML=`<form id="budget-form"><div class="budget-input-grid">${Object.entries(profiles).map(([id,p])=>`<fieldset class="budget-input"><legend>${esc(p.name)}</legend><div class="budget-fields">${fields.slice(0,3).map(f=>field(id,f)).join('')}</div><details class="insight-details"><summary>Selling & irrigation costs</summary><div class="budget-fields">${fields.slice(3).map(f=>field(id,f)).join('')}</div></details></fieldset>`).join('')}</div><p class="insight-caption">Costs: seed, fertiliser, chemicals, field operations, harvest and insurance. Enter each cost once; use 0 for no additional selling or irrigation costs. Yield is your assumption.</p><div class="budget-actions"><button class="primary" type="submit" id="budget-calculate" disabled>Compare budgets</button><button class="text-button" type="button" id="budget-example">Load 2012 example</button><button class="text-button" type="button" id="budget-clear">Clear inputs</button></div></form>`;
+  $('budget-sources').innerHTML=`<p>${esc(metadata.reference_note)}</p>${Object.values(profiles).map(p=>`<p><b>${esc(p.name)} · ${p.year} · ${esc(p.region)}</b><br>${esc(p.system)} · <a href="${esc(p.source_url)}" target="_blank" rel="noreferrer">NSW budget source ↗</a></p>`).join('')}<p><a href="${esc(metadata.market_url)}" target="_blank" rel="noreferrer">ABARES price indicators ↗</a> provide market context; enter your own local selling-price assumption.</p><p><a href="${esc(metadata.method_url)}" target="_blank" rel="noreferrer">NSW gross-margin method ↗</a></p><p>Margin = yield × (price − extra selling costs per tonne) − variable costs per hectare − irrigation costs per hectare. Break-even solves this equation for yield or price. Update costs when assumptions change; archived levies and insurance remain fixed in this simplified calculator.</p>`;
+  const form=$('budget-form'),inputs=()=>Array.from(form.querySelectorAll('input'));
+  function invalidate(message){version++;controller?.abort();$('budget-results').replaceChildren();$('budget-status').textContent=message;$('budget-calculate').disabled=!context;}
+  function clear(){inputs().forEach(input=>input.value='');exampleLoaded=false;$('budget-basis').textContent='Your scenario · enter local figures';invalidate('Enter assumptions or load the archived example.');}
+  form.addEventListener('input',()=>{if(exampleLoaded)$('budget-basis').textContent='Edited from 2012 NSW examples · update all assumptions';invalidate('Inputs changed. Compare again to update.');});
+  form.addEventListener('invalid',e=>{const details=e.target.closest('details');if(details)details.open=true;},true);
+  $('budget-clear').onclick=clear;
+  $('budget-example').onclick=()=>{inputs().forEach(input=>input.value=profiles[input.dataset.crop].example[input.dataset.field]);exampleLoaded=true;$('budget-basis').textContent='Archived example · 2012 · Central West NSW dryland';invalidate('2012 prices and costs loaded. Update them before farm planning.');};
+  form.onsubmit=async event=>{
+   event.preventDefault();if(!context||!form.reportValidity())return;
+   const rows=Object.keys(profiles).map(crop=>{const row={crop_id:crop};inputs().filter(el=>el.dataset.crop===crop).forEach(el=>row[el.dataset.field]=el.value===''?null:Number(el.value));return row;});
+   invalidate('Comparing budgets…');const current=version;controller=new AbortController();$('budget-calculate').disabled=true;
+   const timer=setTimeout(()=>{if(current===version)invalidate('Budget request timed out. Try again.');},12000);
+   try{const result=await api('/api/budget',{lat:context.lat,lon:context.lon,rows},controller.signal);if(current!==version)return;$('budget-results').innerHTML=render(result,exampleLoaded);$('budget-status').textContent='Budget comparison ready.';}
+   catch(error){if(current===version)$('budget-status').textContent=error.message||'Budget comparison unavailable.';}
+   finally{clearTimeout(timer);if(current===version)$('budget-calculate').disabled=!context;}
+  };
+  return {setContext(next){context=next;if(!next){clear();lastKey=null;$('budget-location').textContent='Awaiting land selection';invalidate('Select a valid NSW point to compare budgets.');return;}const key=JSON.stringify([next.lat,next.lon,next.irrigation]);if(lastKey!==null&&lastKey!==key)clear();lastKey=key;$('budget-status').textContent='Enter assumptions or load the archived example.';$('budget-calculate').disabled=false;$('budget-location').textContent=next.name;}};
+ }
+ const api={render,mount};if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.FarmLensBudget=api;
+})(typeof globalThis!=='undefined'?globalThis:this);

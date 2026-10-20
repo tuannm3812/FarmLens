@@ -1,0 +1,44 @@
+{
+  "displayFieldName": "BlockName",
+  "fieldAliases": {
+    "BlockName": "BlockName",
+    "BlockType": "BlockType",
+    "BlockStartDate": "BlockStartDate",
+    "Resolution_cm": "Resolution_cm"
+  },
+  "fields": [
+    {
+      "name": "BlockName",
+      "type": "esriFieldTypeString",
+      "alias": "BlockName",
+      "length": 50
+    },
+    {
+      "name": "BlockType",
+      "type": "esriFieldTypeString",
+      "alias": "BlockType",
+      "length": 50
+    },
+    {
+      "name": "BlockStartDate",
+      "type": "esriFieldTypeDate",
+      "alias": "BlockStartDate",
+      "length": 8
+    },
+    {
+      "name": "Resolution_cm",
+      "type": "esriFieldTypeInteger",
+      "alias": "Resolution_cm"
+    }
+  ],
+  "features": [
+    {
+      "attributes": {
+        "BlockName": "DUBBO",
+        "BlockType": "ADS40Towns",
+        "BlockStartDate": 1238716800000,
+        "Resolution_cm": 10
+      }
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "results": [
+    {
+      "layerId": 1,
+      "layerName": "PHW_000_005_EV_N_P_AU_TRN_N",
+      "displayFieldName": "",
+      "attributes": {
+        "Classify.Pixel Value": "6.400000",
+        "Classify.Class value": "3"
+      }
+    },
+    {
+      "layerId": 2,
+      "layerName": "PHW_000_005_95_N_P_AU_TRN_N",
+      "displayFieldName": "",
+      "attributes": {
+        "Classify.Pixel Value": "7.700000",
+        "Classify.Class value": "6"
+      }
+    },
+    {
+      "layerId": 3,
+      "layerName": "PHW_000_005_05_N_P_AU_TRN_N",
+      "displayFieldName": "",
+      "attributes": {
+        "Classify.Pixel Value": "5.100000",
+        "Classify.Class value": "1"
+      }
+    },
+    {
+      "layerId": 5,
+      "layerName": "PHW_005_015_EV_N_P_AU_TRN_N",
+      "displayFieldName": "",
+      "attributes": {
+        "Classify.Pixel Value": "6.400000",
+        "Classify.Class value": "3"
+      }
+    },
+    {
+      "layerId": 6,
+      "layerName": "PHW_005_015_95_N_P_AU_TRN_N",
+      "displayFieldName": "",
+      "attributes": {
+        "Classify.Pixel Value": "7.700000",
+        "Classify.Class value": "6"
+      }
+    },
+    {
+      "layerId": 7,
+      "layerName": "PHW_005_015_05_N_P_AU_TRN_N",
+      "displayFieldName": "",
+      "attributes": {
+        "Classify.Pixel Value": "5.100000",
+        "Classify.Class value": "1"
+      }
+    },
+    {
+      "layerId": 9,
+      "layerName": "PHW_015_030_EV_N_P_AU_TRN_N",
+      "displayFieldName": "",
+      "attributes": {
+        "Classify.Pixel Value": "6.700000",
+        "Classify.Class value": "4"
+      }
+    },
+    {
+      "layerId": 10,
+      "layerName": "PHW_015_030_95_N_P_AU_TRN_N",
+      "displayFieldName": "",
+      "attributes": {
+        "Classify.Pixel Value": "8.100000",
+        "Classify.Class value": "7"
+      }
+    },
+    {
+      "layerId": 11,
+      "layerName": "PHW_015_030_05_N_P_AU_TRN_N",
+      "displayFieldName": "",
+      "attributes": {
+        "Classify.Pixel Value": "5.400000",
+        "Classify.Class value": "1"
+      }
+    }
+  ]
+}

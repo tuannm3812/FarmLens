@@ -1,0 +1,16 @@
+[
+  {
+    "family": "Inter",
+    "file": "inter-latin.woff2",
+    "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+    "license": "https://raw.githubusercontent.com/google/fonts/main/ofl/inter/OFL.txt",
+    "bytes": 48432
+  },
+  {
+    "family": "Manrope",
+    "file": "manrope-latin.woff2",
+    "url": "https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSvfedN4.woff2",
+    "license": "https://raw.githubusercontent.com/google/fonts/main/ofl/manrope/OFL.txt",
+    "bytes": 24576
+  }
+]

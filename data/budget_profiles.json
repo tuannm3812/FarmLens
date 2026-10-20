@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "wheat": {"name":"Wheat", "year":2012, "region":"Central West NSW", "system":"Dryland · short fallow after cereal · PH wheat", "source_url":"https://archive.dpi.nsw.gov.au/__data/assets/pdf_file/0009/386721/dryland-central-west-wheat-shortfallow.pdf", "example":{"yield_t_ha":1.5,"price_aud_t":275,"variable_aud_ha":293.91,"selling_aud_t":0,"irrigation_aud_ha":0}},
+    "barley": {"name":"Barley", "year":2012, "region":"Central West NSW", "system":"Dryland · short fallow · feed barley", "source_url":"https://archive.dpi.nsw.gov.au/__data/assets/pdf_file/0011/386714/dryland-central-west-barley.pdf", "example":{"yield_t_ha":2.2,"price_aud_t":140,"variable_aud_ha":249.14,"selling_aud_t":0,"irrigation_aud_ha":0}},
+    "canola": {"name":"Canola", "year":2012, "region":"Central West NSW", "system":"Dryland · short fallow · conventional canola", "source_url":"https://archive.dpi.nsw.gov.au/__data/assets/pdf_file/0009/386613/dryland-central-west-canola.pdf", "example":{"yield_t_ha":1.6,"price_aud_t":460,"variable_aud_ha":470.61,"selling_aud_t":0,"irrigation_aud_ha":0}}
+  },
+  "method_url":"https://www.dpird.nsw.gov.au/agriculture/budgets/about",
+  "market_url":"https://www.agriculture.gov.au/abares/data/weekly-commodity-price-update/australian-agricultural-prices",
+  "reference_note":"March 2012 NSW DPI examples, not current prices or predictions for this pin. Published total variable costs are held fixed per hectare here, including archived levies and insurance. Update every assumption for your farm; avoid counting fees twice."
+}

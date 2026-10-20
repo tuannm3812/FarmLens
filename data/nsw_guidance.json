@@ -1,0 +1,218 @@
+{
+  "version": "nsw-guidance-2026-10-20-v1",
+  "reviewed_on": "2026-10-20",
+  "validation": "Desk review of guidance, not empirical agronomic validation",
+  "profiles": {
+    "wheat": {
+      "source_title": "NSW Winter crop variety sowing guide 2026, V2 (April 2026) \u00b7 pp. 4\u20135, 15, 21",
+      "source_url": "https://www.dpird.nsw.gov.au/__data/assets/pdf_file/0008/1664405/2026-Winter-crop-variety-sowing-guide-V2.pdf",
+      "checks": [
+        {
+          "id": "variety",
+          "message": "Match cultivar and flowering time to regional frost and heat risks; a broad month filter cannot do this."
+        }
+      ]
+    },
+    "barley": {
+      "source_title": "NSW Winter crop variety sowing guide 2026, V2 (April 2026) \u00b7 pp. 40\u201345",
+      "source_url": "https://www.dpird.nsw.gov.au/__data/assets/pdf_file/0008/1664405/2026-Winter-crop-variety-sowing-guide-V2.pdf",
+      "checks": [
+        {
+          "id": "variety",
+          "message": "Check regional sowing and cultivar traits, including waterlogging tolerance; species-level scores cannot select a variety."
+        }
+      ]
+    },
+    "oats": {
+      "source_title": "NSW Winter crop variety sowing guide 2026, V2 (April 2026) \u00b7 pp. 55\u201364",
+      "source_url": "https://www.dpird.nsw.gov.au/__data/assets/pdf_file/0008/1664405/2026-Winter-crop-variety-sowing-guide-V2.pdf",
+      "checks": [
+        {
+          "id": "variety",
+          "message": "Choose a grain, hay or grazing variety and its local sowing window; these uses are not interchangeable."
+        }
+      ]
+    },
+    "canola": {
+      "source_title": "NSW Winter crop variety sowing guide 2026, V2 (April 2026) \u00b7 p. 74",
+      "source_url": "https://www.dpird.nsw.gov.au/__data/assets/pdf_file/0008/1664405/2026-Winter-crop-variety-sowing-guide-V2.pdf",
+      "checks": [
+        {
+          "id": "ph_method",
+          "message": "Check acidity by depth using pHCa tests; the modelled pH-water average cannot assess this."
+        },
+        {
+          "id": "establishment",
+          "message": "Check seedbed moisture, nitrogen, hardpans and rotation history."
+        }
+      ],
+      "avoid_poor_drainage": true
+    },
+    "chickpea": {
+      "source_title": "NSW Winter crop variety sowing guide 2026, V2 (April 2026) \u00b7 p. 97",
+      "source_url": "https://www.dpird.nsw.gov.au/__data/assets/pdf_file/0008/1664405/2026-Winter-crop-variety-sowing-guide-V2.pdf",
+      "checks": [
+        {
+          "id": "ph_method",
+          "message": "Check pHCa, aluminium and subsoil chloride; pH-water is not a substitute."
+        },
+        {
+          "id": "crop_stage",
+          "message": "Check late-spring frost and disease risk for the selected variety."
+        }
+      ],
+      "avoid_poor_drainage": true
+    },
+    "lentil": {
+      "source_title": "NSW Winter crop variety sowing guide 2026, V2 (April 2026) \u00b7 pp. 140\u2013141",
+      "source_url": "https://www.dpird.nsw.gov.au/__data/assets/pdf_file/0008/1664405/2026-Winter-crop-variety-sowing-guide-V2.pdf",
+      "checks": [
+        {
+          "id": "ph_method",
+          "message": "Guidance prefers pHCa 6\u20138; obtain depth-resolved tests rather than converting the modelled pH-water average."
+        },
+        {
+          "id": "subsoil",
+          "message": "Check salinity, sodicity and subsurface acidity before selecting lentil."
+        }
+      ],
+      "avoid_poor_drainage": true,
+      "rainfed_min_mm": 300,
+      "rainfed_min_inclusive": false
+    },
+    "macadamia": {
+      "source_title": "NSW Macadamia grower's guide 2023: new orchards \u00b7 pp. 9, 18",
+      "source_url": "https://www.dpi.nsw.gov.au/__data/assets/pdf_file/0011/1475984/Macadamia-Growers-Guide-new-orchards.pdf",
+      "checks": [
+        {
+          "id": "root_zone",
+          "message": "Confirm at least 0.5 m of free-draining rooting depth; the 0\u201330 cm soil model does not establish depth."
+        },
+        {
+          "id": "frost",
+          "message": "Check local frost exposure and cold-air pooling; monthly mean minima cannot establish a frost-free orchard."
+        }
+      ],
+      "avoid_poor_drainage": true,
+      "rainfed_min_mm": 1200,
+      "rainfed_min_inclusive": true
+    },
+    "sorghum": {
+      "source_title": "NSW Summer cropping options for northern and central NSW 2022 \u00b7 pp. 2\u20135",
+      "source_url": "https://www.dpird.nsw.gov.au/__data/assets/pdf_file/0003/1415388/summer-crop-options-2022.pdf",
+      "checks": [
+        {
+          "id": "establishment",
+          "message": "Measure sowing-depth soil temperature and stored soil water; annual air temperature and rainfall cannot establish readiness."
+        },
+        {
+          "id": "crop_stage",
+          "message": "Check cultivar timing against frost and flowering heat; the October\u2013November filter is only a demo window."
+        }
+      ]
+    },
+    "cotton": {
+      "source_title": "NSW SOILpak for cotton growers, third edition \u00b7 A2-3\u2013A2-6 (edition date unverified)",
+      "source_url": "https://www.dpi.nsw.gov.au/__data/assets/pdf_file/0007/167497/soilpak-cotton-Part-A.pdf",
+      "checks": [
+        {
+          "id": "water_supply",
+          "message": "Check stored water, infiltration, rooting conditions and a crop water budget."
+        },
+        {
+          "id": "ph_method",
+          "message": "The soil targets use CaCl2 pH; do not compare them directly with the modelled pH-water average."
+        },
+        {
+          "id": "drainage_management",
+          "message": "Assess waterlogging and drainage design; a water-scenario selection does not establish suitable soil structure."
+        }
+      ]
+    },
+    "rice": {
+      "source_title": "NSW Rice growing guide 2021, second edition \u00b7 pp. 1, 29",
+      "source_url": "https://www.dpi.nsw.gov.au/__data/assets/pdf_file/0004/1361173/RGG-2021-web-final-26Oct2021.pdf",
+      "checks": [
+        {
+          "id": "water_supply",
+          "message": "Verify irrigation volume and a paddock water budget; annual rainfall is not an irrigated water balance."
+        },
+        {
+          "id": "soil_suitability",
+          "message": "Check permeability, sodicity and rice land suitability; topsoil clay alone cannot establish these."
+        },
+        {
+          "id": "crop_stage",
+          "message": "Match variety timing and water management to microspore cold risk."
+        }
+      ]
+    },
+    "lucerne": {
+      "source_title": "NSW Lucerne for pasture and fodder, third edition (2003) \u00b7 pp. 8\u20139, 16",
+      "source_url": "https://www.dpird.nsw.gov.au/__data/assets/pdf_file/0010/164737/p2225pt1.pdf",
+      "checks": [
+        {
+          "id": "ph_method",
+          "message": "Check top-10-cm pHCa with aluminium and test subsoil acidity; the modelled 0\u201330 cm pH-water value cannot substitute."
+        },
+        {
+          "id": "root_zone",
+          "message": "Confirm deep rooting conditions, establishment moisture and locally suitable disease-resistant varieties."
+        }
+      ],
+      "avoid_poor_drainage": true
+    },
+    "grapes": {
+      "source_title": "NSW Climate Vulnerability Assessment: Chardonnay \u00b7 undated webpage",
+      "source_url": "https://www.dpird.nsw.gov.au/dpi/climate/climate-vulnerability-assessment/commodity-pages/wine-grapes-chardonnay",
+      "checks": [
+        {
+          "id": "crop_stage",
+          "message": "Assess budbreak and bloom frost, seasonal heat and irrigation demand for a selected cultivar; annual means cannot replace stage-specific checks."
+        },
+        {
+          "id": "crop_scope",
+          "message": "This NSW climate reference concerns Chardonnay, not every grape cultivar or use; obtain local variety advice."
+        }
+      ]
+    },
+    "olives": {
+      "source_title": "NSW DPI Olive tree crops (26 October 2021)",
+      "source_url": "https://www.dpird.nsw.gov.au/stories/olive-tree-crops",
+      "checks": [
+        {
+          "id": "site_climate",
+          "message": "Check drainage, winter chilling and summer humidity for the intended cultivar; the annual climate screen cannot assess these."
+        }
+      ]
+    },
+    "citrus": {
+      "source_title": "NSW Australian mandarin production manual (September 2017) \u00b7 Orchard basics, pp. 7\u201311",
+      "source_url": "https://www.dpi.nsw.gov.au/__data/assets/pdf_file/0004/820624/Australian-mandarin-production-manual.pdf",
+      "checks": [
+        {
+          "id": "ph_method",
+          "message": "General citrus guidance uses CaCl2 pH; a compatible soil profile is needed."
+        },
+        {
+          "id": "orchard",
+          "message": "Check drainage, effective depth, rootstock, frost and irrigation water; this mandarin reference does not validate the sweet-orange proxy."
+        }
+      ]
+    },
+    "improved_pasture": {
+      "source_title": "NSW DPIRD Perennial ryegrass species guidance \u00b7 undated webpage",
+      "source_url": "https://www.dpird.nsw.gov.au/agriculture/pastures-and-rangelands/species-varieties/pf/factsheets/perennial-ryegrass",
+      "checks": [
+        {
+          "id": "persistence",
+          "message": "Check regional rainfall distribution, summer moisture and heat, fertility and aluminium for perennial ryegrass persistence."
+        },
+        {
+          "id": "crop_scope",
+          "message": "This is a perennial-ryegrass proxy, not a locally selected pasture mixture; confirm species and cultivars."
+        }
+      ]
+    }
+  }
+}

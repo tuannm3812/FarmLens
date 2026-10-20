@@ -1,0 +1,9 @@
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.pdf binary
+*.woff2 binary
+# Markdown hard breaks and verbatim upstream licence text are intentional.
+*.md whitespace=-blank-at-eol
+web/fonts/*-OFL.txt -whitespace
+docs/showcase/licenses/*-OFL.txt -whitespace

@@ -1,0 +1,242 @@
+[
+  {
+    "id": "wheat",
+    "source": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=2114",
+    "rows": [
+      [
+        "Temperat. requir.",
+        "15",
+        "23",
+        "5",
+        "27",
+        "Soil texture",
+        "medium, organic",
+        "heavy, medium"
+      ]
+    ]
+  },
+  {
+    "id": "barley",
+    "source": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=1232",
+    "rows": [
+      [
+        "Temperat. requir.",
+        "15",
+        "20",
+        "2",
+        "40",
+        "Soil texture",
+        "medium",
+        "heavy, medium, light"
+      ]
+    ]
+  },
+  {
+    "id": "canola",
+    "source": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=549",
+    "rows": [
+      [
+        "Temperat. requir.",
+        "15",
+        "25",
+        "5",
+        "41",
+        "Soil texture",
+        "medium, light",
+        "heavy, medium, light"
+      ]
+    ]
+  },
+  {
+    "id": "oats",
+    "source": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=481",
+    "rows": [
+      [
+        "Temperat. requir.",
+        "16",
+        "20",
+        "5",
+        "30",
+        "Soil texture",
+        "heavy, medium, light",
+        "heavy, medium, light"
+      ]
+    ]
+  },
+  {
+    "id": "chickpea",
+    "source": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=2479",
+    "rows": [
+      [
+        "Temperat. requir.",
+        "15",
+        "29",
+        "7",
+        "35",
+        "Soil texture",
+        "heavy, medium",
+        "heavy, medium, light"
+      ]
+    ]
+  },
+  {
+    "id": "lentil",
+    "source": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=7209",
+    "rows": [
+      [
+        "Temperat. requir.",
+        "15",
+        "29",
+        "5",
+        "32",
+        "Soil texture",
+        "heavy, medium",
+        "heavy, medium, light"
+      ]
+    ]
+  },
+  {
+    "id": "sorghum",
+    "source": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=48747",
+    "rows": [
+      [
+        "Temperat. requir.",
+        "22",
+        "35",
+        "8",
+        "40",
+        "Soil texture",
+        "heavy, medium",
+        "wide"
+      ]
+    ]
+  },
+  {
+    "id": "cotton",
+    "source": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=1160",
+    "rows": [
+      [
+        "Temperat. requir.",
+        "22",
+        "36",
+        "15",
+        "42",
+        "Soil texture",
+        "heavy, medium",
+        "heavy, medium, light, organic"
+      ]
+    ]
+  },
+  {
+    "id": "rice",
+    "source": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=1574",
+    "rows": [
+      [
+        "Temperat. requir.",
+        "20",
+        "30",
+        "10",
+        "36",
+        "Soil texture",
+        "wide",
+        "wide"
+      ]
+    ]
+  },
+  {
+    "id": "lucerne",
+    "source": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=1428",
+    "rows": [
+      [
+        "Temperat. requir.",
+        "21",
+        "27",
+        "5",
+        "45",
+        "Soil texture",
+        "medium, light",
+        "medium, light"
+      ]
+    ]
+  },
+  {
+    "id": "grapes",
+    "source": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=2160",
+    "rows": [
+      [
+        "Temperat. requir.",
+        "18",
+        "30",
+        "10",
+        "38",
+        "Soil texture",
+        "medium, organic",
+        "heavy, medium, light"
+      ]
+    ]
+  },
+  {
+    "id": "olives",
+    "source": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=1553",
+    "rows": [
+      [
+        "Temperat. requir.",
+        "20",
+        "34",
+        "5",
+        "40",
+        "Soil texture",
+        "medium, light",
+        "wide"
+      ]
+    ]
+  },
+  {
+    "id": "citrus",
+    "source": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=720",
+    "rows": [
+      [
+        "Temperat. requir.",
+        "20",
+        "30",
+        "13",
+        "38",
+        "Soil texture",
+        "medium, light",
+        "heavy, medium, light"
+      ]
+    ]
+  },
+  {
+    "id": "macadamia",
+    "source": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=1382",
+    "rows": [
+      [
+        "Temperat. requir.",
+        "10",
+        "26",
+        "8",
+        "35",
+        "Soil texture",
+        "medium, light, organic",
+        "medium, light, organic"
+      ]
+    ]
+  },
+  {
+    "id": "improved_pasture",
+    "source": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=1362",
+    "rows": [
+      [
+        "Temperat. requir.",
+        "14",
+        "25",
+        "4",
+        "35",
+        "Soil texture",
+        "heavy, medium",
+        "heavy, medium"
+      ]
+    ]
+  }
+]

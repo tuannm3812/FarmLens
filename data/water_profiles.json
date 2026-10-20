@@ -1,0 +1,14 @@
+{
+  "version": "water-pilot-v1",
+  "sources": [
+    {"title":"FAO-56, Chapter 6, Tables 11 and 12", "url":"https://www.fao.org/4/x0490e/x0490e0b.htm"},
+    {"title":"Open-Meteo historical daily rain and FAO-56 ET0", "url":"https://open-meteo.com/en/docs/historical-weather-api"},
+    {"title":"NSW soil moisture monitoring and irrigation timing", "url":"https://www.nsw.gov.au/regional-and-primary-industries/agriculture/soil/soil-moisture/moisture-monitoring"}
+  ],
+  "defaults": {"crop_id":"wheat", "sowing_month":5, "soil_buffer_mm":100, "starting_water_mm":50, "rain_capture_pct":80, "efficiency_pct":80, "supply_ml_ha":null},
+  "profiles": {
+    "wheat": {"name":"Wheat", "kc":[0.30,1.15,0.25], "stages":[20,30,60,40], "planting_months":[4,5,6], "coefficient_note":"FAO spring-type wheat proxy, not winter wheat with dormancy. End coefficient uses the dry-harvest value 0.25.", "timing_note":"General 150-day small-grain example from FAO Table 11 (Mediterranean); not a locally validated NSW cultivar calendar."},
+    "barley": {"name":"Barley", "kc":[0.30,1.15,0.25], "stages":[20,30,60,40], "planting_months":[4,5,6], "coefficient_note":"FAO barley coefficients for a well-managed, unstressed crop.", "timing_note":"General 150-day small-grain example from FAO Table 11 (Mediterranean); not a locally validated NSW cultivar calendar."},
+    "canola": {"name":"Canola", "kc":[0.35,1.10,0.35], "stages":[30,40,70,40], "planting_months":[4,5], "coefficient_note":"FAO rapeseed/canola; mid-season 1.10 is a pilot choice within the listed 1.0–1.15 range.", "timing_note":"30/40/70/40 days is an illustrative FarmLens timing assumption, not a sourced NSW stage calendar. Replace with local cultivar timings."}
+  }
+}

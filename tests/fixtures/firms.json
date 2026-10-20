@@ -1,0 +1,5 @@
+{
+  "availability": "data_id,min_date,max_date\nVIIRS_SNPP_SP,2012-01-20,2026-06-30\n",
+  "detections": "latitude,longitude,acq_date,acq_time,satellite,confidence\n-32.26,148.60,2023-01-01,0300,N,n\n-32.26,148.60,2023-01-01,0300,N,n\n-32.30,148.65,2023-01-02,0310,N,h\n-32.60,148.60,2023-01-02,0310,N,h\n",
+  "empty": "latitude,longitude,acq_date,acq_time,satellite,confidence\n"
+}

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="144" viewBox="0 0 240 144" role="img" aria-labelledby="title desc">
+<title id="title">Natural bare surfaces — symbolic illustration</title>
+<desc id="desc">A stylised land-cover category, not an image of any selected location. Terrain, structures, vegetation and proportions are illustrative.</desc>
+<defs><clipPath id="surface"><path d="M120 22 222 73 120 124 18 73Z"/></clipPath></defs>
+<ellipse cx="120" cy="132" rx="80" ry="7" fill="#252a26" opacity=".045"/>
+<path d="M18 73v9l102 51v-9Z" fill="#b4a17e"/>
+<path d="M120 124v9l102-51v-9Z" fill="#e0cda7"/>
+<path d="M18 73 120 22l102 51-102 51Z" fill="#e7d4ad"/>
+<path d="M38 70c40-15 55 5 85-8s51-5 72 8M70 96c31-14 49 4 78-7" fill="none" stroke="#d1b889" stroke-width="3" stroke-linecap="round"/>
+<path d="m87 66 9 10-5 13m5-13 18 2 7 15m-7-15 9-10m43 9-4 10 8 9" fill="none" stroke="#b39b75" stroke-width="1.5"/>
+<g><path d="m55 72 8-12 13 8-4 9Z" fill="#c1ae8c"/><path d="m63 60 4 12 9-4Z" fill="#eaddbf"/><path d="m142 52 10-16 17 10-5 12Z" fill="#baa88b"/><path d="m152 36 6 16 11-6Z" fill="#e7dcc7"/></g>
+<g fill="#b79c73"><ellipse cx="130" cy="103" rx="5" ry="2.5"/><ellipse cx="192" cy="77" rx="4" ry="2"/><ellipse cx="103" cy="46" rx="3" ry="1.5"/></g>
+</svg>
