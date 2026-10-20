@@ -15,5 +15,9 @@ htmlcov/
 .ruff_cache/
 .mypy_cache/
 .superpowers/
+# Local working notes, presentation scripts and archived build materials.
+docs/internal/
+# Local diagnostic reports; curated evidence belongs in the public method docs.
+docs/checkpoints/
 *.py[cod]
 *.log

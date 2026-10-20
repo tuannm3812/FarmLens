@@ -19,7 +19,6 @@ in external imagery, data, fonts, photographs or provider trademarks.
 API caches are excluded from Git. Small fixtures, sourced parameter records and
 recorded screenshots are included with provenance. Screenshots and showcase
 documents contain third-party map/imagery/photo content; the MIT code licence
-does not relicense that content. See [showcase credits](docs/showcase/showcase-release-notes.md)
-and the [earlier full credit inventory](docs/showcase/sources-and-notes.md).
+does not relicense that content. See the [snapshot and poster credits](docs/showcase/README.md).
 
 No provider, photographer or research organisation endorses FarmLens.

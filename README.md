@@ -4,12 +4,16 @@
 
 <h1 align="center">FarmLens</h1>
 <p align="center"><strong>Your land, your climate, your best crops, with the reasons.</strong></p>
-<p align="center">A friendly NSW land-screening prototype · Python 3.11 · Custom web UI · MIT code</p>
-
-[![FarmLens checks](https://github.com/tuannm3812/FarmLens/actions/workflows/check.yml/badge.svg)](https://github.com/tuannm3812/FarmLens/actions/workflows/check.yml)
+<p align="center">A friendly farming companion for exploring land in New South Wales.</p>
+<p align="center">
+  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.11-3776AB?style=flat&amp;logo=python&amp;logoColor=white" alt="Python 3.11"></a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="https://img.shields.io/badge/JavaScript-ES%20modules-F7DF1E?style=flat&amp;logo=javascript&amp;logoColor=white" alt="JavaScript ES modules"></a>
+  <a href="https://leafletjs.com/"><img src="https://img.shields.io/badge/Leaflet-Maps-199900?style=flat&amp;logo=leaflet&amp;logoColor=white" alt="Leaflet maps"></a>
+  <a href="https://streamlit.io/"><img src="https://img.shields.io/badge/Streamlit-Optional%20UI-FF4B4B?style=flat&amp;logo=streamlit&amp;logoColor=white" alt="Streamlit optional UI"></a>
+</p>
 
 FarmLens brings climate, Australian modelled soil and crop requirements into one
-map-led report. Choose a point in New South Wales, compare three crop candidates,
+map-led report. Choose a point in New South Wales, compare up to three crop candidates,
 and inspect the reasons and limitations behind each score.
 
 **Status:** working local showcase. There is no public interactive demo yet.
@@ -18,10 +22,7 @@ or probabilities of success.
 
 ![FarmLens explorer showing the Dubbo land snapshot, dated imagery and weather](docs/screenshots/showcase-explorer.png)
 
-[Showcase image](docs/showcase/farmlens-linkedin.png) ·
-[A3 poster](docs/showcase/farmlens-showcase-2026-10-20.pdf) ·
-[Demo script](docs/showcase/showcase-demo-script.pdf) ·
-[Documentation](docs/index.md)
+*Recorded Dubbo example. Source dates and data status remain visible in the report.*
 
 ## What you can explore
 
@@ -131,8 +132,8 @@ crop rankings. Current crop prices and farm-specific yields are not predicted.
 | [NASA FIRMS](https://firms.modaps.eosdis.nasa.gov/api/) | Optional historical fire detections |
 
 SoilGrids remains as an earlier tested client; SLGA is the active Australian soil
-source. Water coefficients, archived budget examples and precise provenance are
-in the [technical reference](docs/technical-reference.md).
+source. Water coefficients, archived budget examples and provenance are described
+in [Methods and limitations](docs/technical-reference.md).
 
 ## Check and contribute
 
@@ -141,8 +142,9 @@ python scripts/check.py
 ```
 
 This runs Python compilation, pytest, JavaScript syntax checks and Node tests.
-Tests use saved fixtures and block live HTTP requests. GitHub Actions runs the
-same command. See [CONTRIBUTING.md](CONTRIBUTING.md) for development and evidence rules.
+Tests use saved fixtures and block live HTTP requests. [GitHub Actions](https://github.com/tuannm3812/FarmLens/actions/workflows/check.yml)
+runs the same command. See [CONTRIBUTING.md](CONTRIBUTING.md) for development and
+evidence rules, and the [architecture](docs/2_architecture.md) for the app's structure.
 
 ```text
 farmlens/   Python clients, scoring, scenarios and local API
@@ -150,7 +152,7 @@ web/        Custom interface, original SVGs, licensed photos and fonts
 data/       Crop profiles, source records and NSW boundary
 tests/      Python/JavaScript tests and fixtures
 scripts/    Cache warming, checks and demo utilities
-docs/       Research, checkpoints, architecture and showcase materials
+docs/       Architecture, methods, source references and showcase poster
 app.py      Retained Streamlit interface
 ```
 
@@ -161,9 +163,15 @@ field data. Public hosting needs a production deployment design: the current
 server deliberately binds to localhost and rejects remote origins. Do not expose
 it through a tunnel as a public service.
 
-[Current checklist](docs/4_next_steps.md) ·
-[Research and competition review](docs/research/2026-10-20-product-and-data-review.md) ·
-[Architecture](docs/2_architecture.md)
+## Project poster
+
+[![FarmLens project poster: land context, transparent crop scores and Finn the report guide](docs/showcase/farmlens-showcase-preview.png)](docs/showcase/farmlens-showcase-2026-10-20.pdf)
+
+[Open the A3 poster (PDF)](docs/showcase/farmlens-showcase-2026-10-20.pdf) ·
+[Image and poster credits](docs/showcase/README.md)
+
+The poster records the 20 October 2026 showcase; its test counts describe that
+snapshot. Use GitHub Actions above for current software checks.
 
 ## Licence and credits
 

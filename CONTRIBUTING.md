@@ -32,5 +32,11 @@ Do not commit API keys, `.env` files, downloaded caches or personal farm data.
 Public issues should use synthetic examples or the supplied town-centre demo points.
 The local server is not a production deployment target.
 
+Keep public documentation focused on setup, architecture, methods, evidence and
+licensing. Personal presentation scripts, drafts, agent plans and temporary
+rendering outputs belong in the ignored `docs/internal/` folder. Diagnostic
+reports under `docs/checkpoints/` are also ignored; promote only curated findings
+and their provenance into the public method documentation.
+
 Project conventions: [AGENTS.md](AGENTS.md) and
 [coding standards](docs/0_coding_standards.md).

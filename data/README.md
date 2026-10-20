@@ -27,7 +27,10 @@ For each prefix `temp`, `rain`, `ph`, the order is `abs_min < opt_min <= opt_max
 | COTTON_DAFF | [Australian Government: Cotton](https://www.agriculture.gov.au/ag-farm-food/crops/cotton) | National season generally begins September/October; narrow October demo filter. |
 | NSW_RICE_2024 | [NSW Rice variety guide 2024–25](https://www.dpi.nsw.gov.au/__data/assets/pdf_file/0005/1563080/Rice-variety-guide-2024-25.pdf) | October/November screening, with actual windows dependent on variety, region and establishment method. Variety/region-specific source; not a current-season directive. |
 
-Use the linked current departmental pages before making operational decisions. The research memo distinguishes integrated sources from the integrated SLGA source and proposed SILO integration. These files are not training data and their scores have not undergone agronomic validation.
+Check current departmental guidance before making operational decisions. The
+[methods reference](../docs/technical-reference.md) describes the integrated
+climate and SLGA sources. These files are not training data and their scores
+have not undergone agronomic validation.
 
 ## NSW map boundary
 

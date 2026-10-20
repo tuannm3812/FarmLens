@@ -5,9 +5,8 @@ custom web interface. Its scores are provisional indices, not yield forecasts.
 
 ## Standards
 
-Use `~/Documents/GitHub/coding-standards/coding_standards.md` when available.
-Project rules and deliberate overrides are in `docs/0_coding_standards.md`.
-That file is self-contained for contributors without the personal master.
+Project rules are in `docs/0_coding_standards.md`.
+They are self-contained for contributors.
 
 ## Working agreement
 
@@ -21,10 +20,12 @@ That file is self-contained for contributors without the personal master.
 - Run `python scripts/check.py` for a release; use targeted checks while editing.
 - No public hosting, social posting or credential-dependent claims by default.
 
-## Evidence and current state
+## Documentation
 
-- `docs/4_next_steps.md` is the current completion checklist.
-- `docs/3_decisions.md` records meaningful decisions.
-- `docs/research/` and `docs/checkpoints/` hold source and validation evidence.
-- Historical plans under `docs/superpowers/plans/` retain their original record.
-- The target agreed on 20 October 2026 is a polished local showcase.
+- The README describes the current scope and public roadmap.
+- `docs/technical-reference.md` explains methods and limitations;
+  `docs/research/` retains the detailed source reviews.
+- Keep personal scripts, draft posts, plans and housekeeping in ignored
+  `docs/internal/`. Local diagnostic outputs use ignored `docs/checkpoints/`.
+- Do not link public documents to ignored files or republish local notes.
+- Keep the public showcase snapshot, poster and their attribution together.
