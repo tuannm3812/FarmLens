@@ -16,10 +16,6 @@
 
 [![FarmLens project poster: land context, transparent crop scores and Finn the report guide](docs/showcase/farmlens-showcase-preview.png)](docs/showcase/farmlens-showcase-2026-10-20.pdf)
 
-[View the A3 poster (PDF)](docs/showcase/farmlens-showcase-2026-10-20.pdf) ·
-[Image credits](docs/showcase/README.md) ·
-[Codex & Astra Builder Day | Sydney](https://luma.com/1bx403an)
-
 FarmLens brings climate, Australian modelled soil and crop requirements into one
 map-led report. Choose a point in New South Wales, compare up to three crop candidates,
 and inspect the reasons and limitations behind each score.

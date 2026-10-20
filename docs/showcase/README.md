@@ -6,11 +6,6 @@ and an [A3 landscape poster](farmlens-showcase-2026-10-20.pdf)
 They are saved examples, not live data. Current software check results are in
 [GitHub Actions](https://github.com/tuannm3812/FarmLens/actions/workflows/check.yml).
 
-The cover includes a small “Built with Codex” credit and links to
-[Codex & Astra Builder Day | Sydney](https://luma.com/1bx403an).
-This identifies the build occasion, not an endorsement or partnership.
-The organiser's poster, characters and OpenAI logos are not reproduced.
-
 ## Credits
 
 - **Map:** © [OpenStreetMap contributors](https://www.openstreetmap.org/copyright),
