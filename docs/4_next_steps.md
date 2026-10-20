@@ -6,6 +6,8 @@ dated implementation plans and test counts remain historical evidence.
 Repository publication was subsequently authorized: public `tuannm3812/FarmLens`,
 MIT for original code. The [release audit](repository-audit.md) records four
 correctness fixes and the current local total of 307 Python / 47 Node cases.
+Published at [tuannm3812/FarmLens](https://github.com/tuannm3812/FarmLens);
+the initial GitHub Actions run passed.
 
 ## Already built
 

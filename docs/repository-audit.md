@@ -55,5 +55,10 @@ changes. The copy contained neither runtime caches nor environment files.
 - The previously recorded minor multi-block imagery-date presentation follow-up
   remains in `showcase/showcase-release-notes.md`.
 
-CI and Git publication status are recorded in GitHub itself; this document does
-not pre-claim a hosted result.
+## Publication
+
+The public repository is [tuannm3812/FarmLens](https://github.com/tuannm3812/FarmLens).
+The initial code commit is `74f7e00`. GitHub recognized the MIT licence, and the
+[first CI run](https://github.com/tuannm3812/FarmLens/actions/runs/39388715220)
+completed successfully with a fresh Ubuntu installation, Python 3.11 and Node 22.
+Subsequent release-documentation changes do not alter the tested application.

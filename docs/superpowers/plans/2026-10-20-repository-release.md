@@ -30,9 +30,9 @@ choices in this conversation.
   index; strengthen ignore rules and remove machine-specific tooling paths.
 - [x] Run the full check command, asset/link/credential checks, and clean-copy
   installation smoke tests. Record the actual results.
-- [ ] Stage and inspect intended files, make the initial commit, create the
+- [x] Stage and inspect intended files, make the initial commit, create the
   authorized public GitHub repo, push, and inspect its CI result.
-- [ ] Report the repo URL and recommend a screenshot/video plus repository link
+- [x] Report the repo URL and recommend a screenshot/video plus repository link
   for today. Public interactive hosting is a separate milestone.
 
 ## Ledger
@@ -52,3 +52,5 @@ choices in this conversation.
 - Hygiene: preserve Markdown hard breaks and verbatim font licences through explicit Git attributes; normalize incidental HTML whitespace. Credential patterns absent; environment/cache/build outputs ignored.
 
 - Clean-copy verification: only staged paths copied; no caches or env files. Editable-install metadata succeeds with no network; full 307 Python / 47 Node suite passes from the copy. Staged diff whitespace check passes.
+- Publication complete: initial commit `74f7e00`, public repository `https://github.com/tuannm3812/FarmLens`, origin/main verified equal to HEAD. GitHub recognizes MIT. CI run `39388715220` succeeded on a fresh Ubuntu/Python 3.11/Node 22 environment.
+- Share recommendation delivered: use the showcase image or short recording with the repository link today. No public app hosting or LinkedIn posting was performed.

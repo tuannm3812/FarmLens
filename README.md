@@ -6,6 +6,8 @@
 <p align="center"><strong>Your land, your climate, your best crops, with the reasons.</strong></p>
 <p align="center">A friendly NSW land-screening prototype · Python 3.11 · Custom web UI · MIT code</p>
 
+[![FarmLens checks](https://github.com/tuannm3812/FarmLens/actions/workflows/check.yml/badge.svg)](https://github.com/tuannm3812/FarmLens/actions/workflows/check.yml)
+
 FarmLens brings climate, Australian modelled soil and crop requirements into one
 map-led report. Choose a point in New South Wales, compare three crop candidates,
 and inspect the reasons and limitations behind each score.
