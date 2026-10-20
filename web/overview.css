@@ -9,3 +9,19 @@
 /* Compact observed land class and monochrome metric symbols. */
 .cover-compact{min-height:0;gap:10px}.cover-copy{min-width:0}.cover-type{display:flex;align-items:center;gap:6px;color:var(--green);font-size:9px;font-weight:550;letter-spacing:.9px;margin-bottom:7px}.cover-type .land-icon{width:18px;height:18px}.cover-copy h3{font-size:17px}.cover-source{display:block;font-size:9px;color:var(--muted);margin-top:4px}.land-card .soil-strip dt{display:flex;align-items:center;gap:5px}.land-icon{fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}.soil-strip .land-icon{width:14px;height:14px}.cover-compact+.soil-strip{margin-top:13px}
 @media(max-width:550px){.cover-copy h3{font-size:15px}.land-card .soil-strip dt{gap:4px;font-size:9px}.soil-strip .land-icon{width:12px;height:12px}}
+
+/* Read-only context scales: position/composition, never a traffic-light grade. */
+.soil-strip{grid-template-columns:repeat(3,minmax(0,1fr))}
+.soil-strip>div{min-width:0}.soil-strip .land-icon{flex-shrink:0}
+.soil-strip dd.soil-indicator{font:400 9px/1.45 Inter,sans-serif;letter-spacing:0;margin-top:12px;color:var(--muted)}
+.soil-track,.texture-track{display:block;position:relative;height:6px;border-radius:4px;margin:0 3px 7px}
+.soil-track-ph{background:linear-gradient(90deg,#c7a866,#e4dfca 50%,#86a4b3)}
+.soil-track-ph:before{content:"";position:absolute;left:50%;top:-2px;height:10px;border-left:1px solid #777d70}
+.soil-track-carbon{background:linear-gradient(90deg,#ebe0cd,#9c7958)}
+.soil-marker{position:absolute;left:var(--soil-position);top:50%;width:9px;height:12px;transform:translate(-50%,-50%);border:2px solid var(--paper);border-radius:3px;background:var(--ink);box-shadow:0 0 0 1px var(--ink)}
+.soil-ticks{display:flex;justify-content:space-between;gap:3px;font-size:8px;white-space:nowrap}
+.soil-scale-note{display:block;margin-top:5px;font-size:8px;line-height:1.5}
+.texture-track{display:flex;gap:3px;margin-left:0;margin-right:0}
+.texture-segment{flex:1;border-radius:3px;background:#e4dfd1}
+.texture-segment.is-selected{background:#a77d34;outline:1px solid #80632e;outline-offset:2px}
+@media(forced-colors:active){.soil-track,.texture-segment{border:1px solid CanvasText}.soil-marker,.texture-segment.is-selected{background:Highlight}}

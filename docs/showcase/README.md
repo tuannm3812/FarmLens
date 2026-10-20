@@ -3,9 +3,13 @@
 The public showcase contains a [Dubbo app snapshot](../screenshots/showcase-explorer.png)
 and an [A3 landscape poster](farmlens-showcase-2026-10-20.pdf)
 ([image preview](farmlens-showcase-preview.png)), recorded on 20 October 2026.
-They are saved examples, not live data. The poster's software test counts describe
-that recorded version; current results are in
+They are saved examples, not live data. Current software check results are in
 [GitHub Actions](https://github.com/tuannm3812/FarmLens/actions/workflows/check.yml).
+
+The cover includes a small “Built with Codex” credit and links to
+[Codex & Astra Builder Day | Sydney](https://luma.com/1bx403an).
+This identifies the build occasion, not an endorsement or partnership.
+The organiser's poster, characters and OpenAI logos are not reproduced.
 
 ## Credits
 

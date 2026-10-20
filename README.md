@@ -12,6 +12,14 @@
   <a href="https://streamlit.io/"><img src="https://img.shields.io/badge/Streamlit-Optional%20UI-FF4B4B?style=flat&amp;logo=streamlit&amp;logoColor=white" alt="Streamlit optional UI"></a>
 </p>
 
+<a id="project-poster"></a>
+
+[![FarmLens project poster: land context, transparent crop scores and Finn the report guide](docs/showcase/farmlens-showcase-preview.png)](docs/showcase/farmlens-showcase-2026-10-20.pdf)
+
+[View the A3 poster (PDF)](docs/showcase/farmlens-showcase-2026-10-20.pdf) ·
+[Image credits](docs/showcase/README.md) ·
+[Codex & Astra Builder Day | Sydney](https://luma.com/1bx403an)
+
 FarmLens brings climate, Australian modelled soil and crop requirements into one
 map-led report. Choose a point in New South Wales, compare up to three crop candidates,
 and inspect the reasons and limitations behind each score.
@@ -19,10 +27,6 @@ and inspect the reasons and limitations behind each score.
 **Status:** working local showcase. There is no public interactive demo yet.
 Scores are provisional screening indices, not planting advice, yield forecasts
 or probabilities of success.
-
-![FarmLens explorer showing the Dubbo land snapshot, dated imagery and weather](docs/screenshots/showcase-explorer.png)
-
-*Recorded Dubbo example. Source dates and data status remain visible in the report.*
 
 ## What you can explore
 
@@ -41,6 +45,13 @@ or probabilities of success.
 
 The custom frontend has Home, Explore land and How it works pages. The original
 Streamlit interface is also retained.
+
+## App snapshot
+
+![FarmLens explorer showing Dubbo soil indicators, dated imagery and seven-day weather](docs/screenshots/showcase-explorer.png)
+
+*Recorded Dubbo example, 20 October 2026. Source dates and data status remain
+visible. Soil indicators show modelled context, not health grades.*
 
 ## Run locally
 
@@ -162,16 +173,6 @@ The next substantive milestone is agronomist review and comparison with measured
 field data. Public hosting needs a production deployment design: the current
 server deliberately binds to localhost and rejects remote origins. Do not expose
 it through a tunnel as a public service.
-
-## Project poster
-
-[![FarmLens project poster: land context, transparent crop scores and Finn the report guide](docs/showcase/farmlens-showcase-preview.png)](docs/showcase/farmlens-showcase-2026-10-20.pdf)
-
-[Open the A3 poster (PDF)](docs/showcase/farmlens-showcase-2026-10-20.pdf) ·
-[Image and poster credits](docs/showcase/README.md)
-
-The poster records the 20 October 2026 showcase; its test counts describe that
-snapshot. Use GitHub Actions above for current software checks.
 
 ## Licence and credits
 

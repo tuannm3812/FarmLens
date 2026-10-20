@@ -80,6 +80,18 @@ These groups do not establish drainage, rooting depth or water-holding capacity.
 The grid is not a current farm soil test. Missing soil remains unknown; the
 legacy SoilGrids client is retained in code but is not the app's active source.
 
+The Land snapshot indicators are display-only. Texture highlights the broad
+group; pH uses 0–14 with 7 marked neutral; carbon is converted from g/kg to percent
+and positioned on a 0–5% display range. Larger carbon values retain their actual
+percentage and an “Above scale” label. Missing or invalid values have no marker;
+partial responses retain available properties and are labelled “Partial data.”
+These are not suitability or soil-health grades and do not change rankings.
+[NSW pH guidance](https://www.dpi.nsw.gov.au/__data/assets/pdf_file/0003/167187/soil-ph.pdf)
+distinguishes water and calcium-chloride measurements.
+[NSW soil-carbon context](https://www.soilquality.org.au/factsheets/how-much-carbon-can-soil-store-nsw)
+explains why carbon interpretation depends on soil type, climate and management;
+topsoil benchmarks should not be treated as targets for our 0–30 cm average.
+
 ## Water and budget scenarios
 
 The **water pilot** compares wheat, barley and canola over ten complete historical

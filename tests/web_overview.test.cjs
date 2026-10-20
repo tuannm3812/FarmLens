@@ -36,6 +36,52 @@ test('snapshot leaves inconsistent or negative soil fractions unassessed',()=>{
  }
  assert.match(ui.land({data:{clay_pct:20,sand_pct:80}}),/<dd>Sandy<\/dd>/);
 });
+test('soil indicators distinguish composition, neutral pH and carbon concentration',()=>{
+ const html=ui.land({status:'cached',data:{ph:7,soc_g_kg:13,clay_pct:12,sand_pct:70}});
+ assert.match(html,/aria-label="Sandy texture: 70% sand, 12% clay"/);
+ assert.match(html,/aria-label="pH in water 7\.0 on a 0 to 14 scale; 7 is neutral"/);
+ assert.match(html,/aria-label="Organic carbon 1\.30% on a 0 to 5% display scale; not a health grade"/);
+ assert.match(html,/--soil-position:50%/);
+ assert.match(html,/--soil-position:26%/);
+ assert.match(html,/7 neutral/);
+});
+test('soil indicators retain real zeros and explicitly label carbon above the display range',()=>{
+ const zero=ui.land({data:{ph:0,soc_g_kg:0,clay_pct:0,sand_pct:0}});
+ assert.match(zero,/pH in water 0\.0 on a 0 to 14 scale/);
+ assert.match(zero,/Organic carbon 0\.00%/);
+ assert.match(zero,/--soil-position:0%/);
+ const high=ui.land({data:{ph:14,soc_g_kg:64}});
+ assert.match(high,/<dd>6\.40%<\/dd>/);
+ assert.match(high,/above the 5% display limit/);
+ assert.match(high,/Above scale/);
+ assert.match(high,/--soil-position:100%/);
+});
+test('missing, offline and impossible soil inputs never produce assessed scales',()=>{
+ for(const data of [{},{ph:null,soc_g_kg:null},{ph:-1,soc_g_kg:-1},{ph:14.1,soc_g_kg:1001},{ph:NaN,soc_g_kg:Infinity}]){
+  const html=ui.land({data});
+  assert.doesNotMatch(html,/--soil-position/);
+  assert.doesNotMatch(html,/0\.00%/);
+ }
+ const offline=ui.land({status:'offline',data:{ph:null,soc_g_kg:null,clay_pct:null,sand_pct:null}});
+ assert.doesNotMatch(offline,/--soil-position|texture-segment is-selected/);
+ assert.match(offline,/<dd>Unassessed<\/dd>/);
+});
+test('partially unavailable soil retains valid properties and labels the partial result',()=>{
+ const html=ui.land({status:'offline',data:{ph:6.5,soc_g_kg:null,clay_pct:12,sand_pct:70,
+  properties:{ph:{status:'cached'},soc_g_kg:{status:'offline'},clay_pct:{status:'cached'},sand_pct:{status:'cached'}}}});
+ assert.match(html,/pH in water 6\.5 on a 0 to 14 scale/);
+ assert.match(html,/Sandy texture: 70% sand, 12% clay/);
+ assert.doesNotMatch(html,/soil-track-carbon/);
+ assert.match(html,/Modelled soil · 0–30 cm · Partial data/);
+});
+test('texture indicator respects the broad-group boundaries without a quality ranking',()=>{
+ for(const [clay_pct,sand_pct,label] of [[35,65,'Clay-rich'],[34,65,'Sandy'],[34,64,'Medium']]){
+  const html=ui.land({data:{clay_pct,sand_pct}});
+  assert.match(html,new RegExp(`aria-label="${label} texture:`));
+  assert.equal((html.match(/texture-segment is-selected/g)||[]).length,1);
+  assert.doesNotMatch(html,/health score|good soil|poor soil/i);
+ }
+});
 test('monthly chart requires all twelve valid months and includes numeric table',()=>{
  const source={status:'cached',data:{period:'2016–2025',years:10,monthly:Array.from({length:12},(_,i)=>({month:i+1,rainfall_mm:i*10,temperature_c:i+5}))}};
  const html=ui.climate(source);

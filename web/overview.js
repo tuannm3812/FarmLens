@@ -19,11 +19,28 @@
  }
  const landAssets={111:'cultivated',112:'natural',124:'aquatic',215:'built',216:'bare',220:'water'};
  const landIcon=slug=>`<svg class="land-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="/assets/icons/land.svg#${slug}"/></svg>`;
+ const inRange=(v,min,max)=>finite(v)&&v>=min&&v<=max;
+ function soilScale(kind,value,max,label,ticks,note){
+  // A display range is not a crop preference or an assessment of soil health.
+  const position=Number((Math.min(value,max)/max*100).toFixed(2));
+  return `<dd class="soil-indicator" role="img" aria-label="${esc(label)}"><span aria-hidden="true"><span class="soil-track soil-track-${kind}" style="--soil-position:${position}%"><span class="soil-marker"></span></span><span class="soil-ticks">${ticks.map(t=>`<span>${esc(t)}</span>`).join('')}</span><span class="soil-scale-note">${esc(note)}</span></span></dd>`;
+ }
+ function soilMetrics(soil){
+  // The aggregate source can be offline when only one property is missing.
+  const s=soil?.status==='loading'?{}:soil?.data||{};
+  const texture=inRange(s.clay_pct,0,100)&&inRange(s.sand_pct,0,100)&&s.clay_pct+s.sand_pct<=100?(s.clay_pct>=35?'Clay-rich':s.sand_pct>=65?'Sandy':'Medium'):'Unassessed';
+  const ph=inRange(s.ph,0,14)?s.ph:null,carbon=inRange(s.soc_g_kg,0,1000)?s.soc_g_kg/10:null;
+  const textureScale=texture==='Unassessed'?'':`<dd class="soil-indicator" role="img" aria-label="${texture} texture: ${num(s.sand_pct)}% sand, ${num(s.clay_pct)}% clay"><span aria-hidden="true"><span class="texture-track">${['Sandy','Medium','Clay-rich'].map(t=>`<span class="texture-segment${t===texture?' is-selected':''}" title="${t}"></span>`).join('')}</span><span class="soil-ticks"><span>Sandy</span><span>Clay-rich</span></span><span class="soil-scale-note">Sand ${num(s.sand_pct)}% · Clay ${num(s.clay_pct)}%</span></span></dd>`;
+  const phScale=ph===null?'':soilScale('ph',ph,14,`pH in water ${num(ph,1)} on a 0 to 14 scale; 7 is neutral`,['0','7 neutral','14'],'Acidic → alkaline');
+  const carbonScale=carbon===null?'':soilScale('carbon',carbon,5,`Organic carbon ${num(carbon,2)}% ${carbon>5?'above the 5% display limit':'on a 0 to 5% display scale'}; not a health grade`,['0','5%'],carbon>5?'Above scale':'Concentration');
+  const html=`<dl class="soil-strip"><div><dt>${landIcon('texture')}Soil texture</dt><dd>${texture}</dd>${textureScale}</div><div><dt>${landIcon('ph')}pH · water</dt><dd>${num(ph,1)}</dd>${phScale}</div><div><dt>${landIcon('carbon')}Organic carbon</dt><dd>${carbon===null?'—':num(carbon,2)+'%'}</dd>${carbonScale}</div></dl>`;
+  return {html,available:texture!=='Unassessed'||ph!==null||carbon!==null};
+ }
  function land(soil,cover){
-  const s=soil?.data||{},c=cover?.data||{};
+  const c=cover?.data||{},metrics=soilMetrics(soil);
+  const soilStatus=soil?.status==='offline'&&metrics.available?'Partial data'+(soil.stale?' · stale':''):sourceLabel(soil);
   const available=['live','cached'].includes(cover?.status)&&Number.isInteger(c.class_code)&&landAssets[c.class_code]&&typeof c.label==='string'&&c.label.trim();
   const asset=available?landAssets[c.class_code]:'unknown';
-  const texture=finite(s.clay_pct)&&finite(s.sand_pct)&&s.clay_pct>=0&&s.sand_pct>=0&&s.clay_pct+s.sand_pct<=100?(s.clay_pct>=35?'Clay-rich':s.sand_pct>=65?'Sandy':'Medium'):'Unassessed';
   const title=available?c.label:cover?.status==='loading'||!cover?'Checking land cover…':'Land cover unavailable';
   const coverNote=available?`${c.year} · ${c.resolution_m} m pixel`:'No estimate substituted';
   const caution=available&&[215,220].includes(c.class_code)?'<p class="cover-caution">This pixel maps '+(c.class_code===215?'built surfaces':'water')+'. Check an agricultural point nearby.</p>':'';
@@ -31,8 +48,8 @@
    <div class="overview-heading"><h2 id="land-heading">Land snapshot</h2><span class="eyebrow">AT YOUR PIN</span></div>
    <div class="cover-row cover-compact"><div class="cover-copy"><h3 class="cover-title">${landIcon(asset)}${esc(title)}</h3><p>${esc(coverNote)}${available?' · DEA · '+esc(sourceLabel(cover)):''}</p></div>
    </div>${caution}
-   <dl class="soil-strip"><div><dt>${landIcon('texture')}Soil texture</dt><dd>${texture}</dd></div><div><dt>${landIcon('ph')}pH · water</dt><dd>${num(s.ph,1)}</dd></div><div><dt>${landIcon('carbon')}Organic carbon</dt><dd>${finite(s.soc_g_kg)?num(s.soc_g_kg/10,2)+'%':'—'}</dd></div></dl>
-   <details class="overview-note"><summary>Modelled soil · 0–30 cm · ${esc(sourceLabel(soil))}</summary><p><b>Soil:</b> SLGA ~90 m estimates. Texture is a broad grouping; test drainage and fertility locally. Water pH differs from calcium-chloride pH.</p><p><b>Land cover:</b> annual DEA classification, not a farm boundary, current condition or cultivation permission. No effect on crop scores.</p>${cover?.warning?`<p>${esc(cover.warning)}</p>`:''}<a href="https://knowledge.dea.ga.gov.au/data/product/dea-land-cover-landsat/" target="_blank" rel="noreferrer">DEA Land Cover source ↗</a><p><a href="https://maps.dea.ga.gov.au/" target="_blank" rel="noreferrer">Explore DEA satellite maps ↗</a></p></details>
+   ${metrics.html}
+   <details class="overview-note"><summary>Modelled soil · 0–30 cm · ${esc(soilStatus)}</summary><p><b>Soil:</b> SLGA ~90 m estimates. Texture groups: clay-rich ≥35% clay, otherwise sandy ≥65% sand, otherwise medium. Test drainage and fertility locally.</p>${soil?.warning?`<p>${esc(soil.warning)}</p>`:''}<p><b>Scales:</b> pH 7 is neutral; water pH differs from calcium-chloride pH. Carbon uses a 0–5% display range; higher values are labelled above scale. These are context indicators, not health grades or crop scores. Carbon interpretation depends on soil type, depth and climate.</p><p><a href="https://www.dpi.nsw.gov.au/__data/assets/pdf_file/0003/167187/soil-ph.pdf" target="_blank" rel="noreferrer">NSW soil pH guide ↗</a> · <a href="https://www.soilquality.org.au/factsheets/how-much-carbon-can-soil-store-nsw" target="_blank" rel="noreferrer">NSW soil carbon context ↗</a></p><p><b>Land cover:</b> annual DEA classification, not a farm boundary, current condition or cultivation permission. No effect on crop scores.</p>${cover?.warning?`<p>${esc(cover.warning)}</p>`:''}<a href="https://knowledge.dea.ga.gov.au/data/product/dea-land-cover-landsat/" target="_blank" rel="noreferrer">DEA Land Cover source ↗</a><p><a href="https://maps.dea.ga.gov.au/" target="_blank" rel="noreferrer">Explore DEA satellite maps ↗</a></p></details>
   </section>`;
  }
  function validDays(f){
