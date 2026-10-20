@@ -13,7 +13,7 @@ checking the evidence behind them.
 | [Water methodology](research/2026-10-20-water-method.md) | Crop coefficients, daily balance and historical summaries |
 | [Land-cover reference](research/2026-10-20-land-cover.md) | Satellite classification, resolution and limits |
 | [Contribution guide](../CONTRIBUTING.md) | Development and verification |
-| [Showcase credits](showcase/README.md) | Public snapshot, poster and third-party attribution |
+| [Product showcase](showcase/README.md) | Cover, walkthrough, snapshot, poster and attribution |
 
 FarmLens is a screening prototype. Software checks and consistency with published
 guidance do not establish agronomic accuracy or replace local soil testing.

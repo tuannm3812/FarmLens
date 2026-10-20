@@ -1,9 +1,22 @@
-# Snapshot and poster
+# Product showcase
 
-The public showcase contains a [Dubbo app snapshot](../screenshots/showcase-explorer.png)
-and an [A3 landscape poster](farmlens-showcase-2026-10-20.pdf)
-([image preview](farmlens-showcase-preview.png)), recorded on 20 October 2026.
-They are saved examples, not live data. Current software check results are in
+Recorded examples from the local FarmLens prototype, captured on 20 October
+2026. These assets show saved results, not live data.
+
+| Asset | Purpose |
+| --- | --- |
+| [Product cover](farmlens-cover.png) | README introduction; cropped Dubbo land report |
+| [24-second walkthrough](farmlens-walkthrough.mp4) · [GIF](farmlens-walkthrough.gif) | Land context → crop options → factor scores → Finn |
+| [Full app snapshot](../screenshots/showcase-explorer.png) | Dubbo explorer, including the soil indicators |
+| [A3 poster](farmlens-showcase-2026-10-20.pdf) · [Preview](farmlens-showcase-preview.png) | Detailed project presentation |
+
+The walkthrough is four paced screenshots with captions and focused crops of the
+real interface. Its timing does not represent application speed. Finn's example
+answer comes from the local report guide, without an OpenAI model call. Data and
+score values have not been edited. Preset coordinates are town-centre examples,
+not verified farm paddocks.
+
+Current software check results are in
 [GitHub Actions](https://github.com/tuannm3812/FarmLens/actions/workflows/check.yml).
 
 ## Credits
@@ -25,8 +38,9 @@ They are saved examples, not live data. Current software check results are in
   [FAO EcoCrop](https://ecocrop.apps.fao.org/ecocrop/srv/en/home) and the
   [source-linked NSW guidance review](../research/2026-10-20-nsw-scoring-validation.md).
 - **Typography:** Inter and Manrope, SIL Open Font License. The PDF embeds these
-  fonts; [sources](licenses/sources.json), [Inter licence](licenses/Inter-OFL.txt)
-  and [Manrope licence](licenses/Manrope-OFL.txt) accompany it.
+  fonts, and the cover and walkthrough render them. [Sources](licenses/sources.json),
+  [Inter licence](licenses/Inter-OFL.txt) and [Manrope licence](licenses/Manrope-OFL.txt)
+  accompany the assets.
 - **Branding:** original FarmLens logo and Finn SVG artwork. MIT covers the
   original artwork and code; third-party content retains its own terms.
 

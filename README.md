@@ -1,10 +1,7 @@
-<p align="center">
-  <img src="web/assets/icons/brand.svg" width="72" alt="FarmLens logo">
-</p>
+<a id="project-poster"></a>
 
-<h1 align="center">FarmLens</h1>
-<p align="center"><strong>Your land, your climate, your best crops, with the reasons.</strong></p>
-<p align="center">A friendly farming companion for exploring land in New South Wales.</p>
+[![FarmLens: Explore your land. Understand your crop options. A recorded Dubbo land report with modelled soil, dated imagery and seven-day weather.](docs/showcase/farmlens-cover.png)](docs/showcase/farmlens-cover.png)
+
 <p align="center">
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.11-3776AB?style=flat&amp;logo=python&amp;logoColor=white" alt="Python 3.11"></a>
   <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="https://img.shields.io/badge/JavaScript-ES%20modules-F7DF1E?style=flat&amp;logo=javascript&amp;logoColor=white" alt="JavaScript ES modules"></a>
@@ -12,42 +9,41 @@
   <a href="https://streamlit.io/"><img src="https://img.shields.io/badge/Streamlit-Optional%20UI-FF4B4B?style=flat&amp;logo=streamlit&amp;logoColor=white" alt="Streamlit optional UI"></a>
 </p>
 
-<a id="project-poster"></a>
+# FarmLens
 
-[![FarmLens project poster: land context, transparent crop scores and Finn the report guide](docs/showcase/farmlens-showcase-preview.png)](docs/showcase/farmlens-showcase-2026-10-20.pdf)
+A friendly farming companion for exploring land in New South Wales. Choose a
+point, compare up to three crop candidates, and understand the reasons behind
+each score using climate, Australian modelled soil and sourced crop profiles.
 
-FarmLens brings climate, Australian modelled soil and crop requirements into one
-map-led report. Choose a point in New South Wales, compare up to three crop candidates,
-and inspect the reasons and limitations behind each score.
+**Working local showcase** — no public interactive demo yet. Scores are
+provisional screening indices, not planting advice or predictions of yield.
 
-**Status:** working local showcase. There is no public interactive demo yet.
-Scores are provisional screening indices, not planting advice, yield forecasts
-or probabilities of success.
+## See it in action
 
-## What you can explore
+**Dubbo → land context → crop options → factor scores → Finn.**
+[Watch the 24-second walkthrough](docs/showcase/farmlens-walkthrough.mp4).
 
-- **Your land:** drop a pin, search a public address or try Coffs Harbour, Dubbo
-  and Broken Hill. Nearby place labels help identify the area.
-- **Climate and soil:** ten complete years of climate, a separate seven-day
-  forecast, and modelled 0–30 cm soil pH, texture and organic carbon.
-- **Crop options:** 15 sourced profiles, transparent factor scores, weakest
-  factors and source-linked NSW guidance checks.
-- **Land context:** dated NSW aerial/satellite imagery, DEA land cover and
-  on-demand vegetation cover observations.
-- **Water and budgets:** separate scenarios for wheat, barley and canola, with
-  editable assumptions. Gross margin is not net profit.
-- **Ask FarmLens:** Finn answers supported questions about the current report
-  locally. Optional OpenAI crop explanations use only approved numeric inputs.
+<details>
+<summary>Preview the walkthrough here</summary>
 
-The custom frontend has Home, Explore land and How it works pages. The original
-Streamlit interface is also retained.
+![Four-step FarmLens walkthrough: Dubbo soil and weather; Canola, Olives and Lucerne shortlist; Canola factor scores with fire unassessed; Finn explaining the strongest and weakest factors.](docs/showcase/farmlens-walkthrough.gif)
 
-## App snapshot
+</details>
 
-![FarmLens explorer showing Dubbo soil indicators, dated imagery and seven-day weather](docs/screenshots/showcase-explorer.png)
+Recorded on 20 October 2026; an edited screenshot sequence, not a live speed test.
+Finn uses the local report guide in this example. [Full-size app snapshot](docs/screenshots/showcase-explorer.png).
 
-*Recorded Dubbo example, 20 October 2026. Source dates and data status remain
-visible. Soil indicators show modelled context, not health grades.*
+## What it helps you do
+
+- **Know your land.** Read ten years of climate, a separate seven-day forecast,
+  modelled soil and dated imagery in one location report.
+- **Compare crop options.** Explore 15 sourced crop profiles with visible factor
+  scores, the weakest factor and source-linked NSW checks.
+- **Understand the reasons.** Ask Finn supported questions about your report and
+  inspect the assumptions behind the shortlist.
+
+Separate water and budget scenarios cover wheat, barley and canola. Optional
+OpenAI explanations use approved numeric inputs; they do not set the scores.
 
 ## Run locally
 
@@ -108,7 +104,7 @@ browser. The separate model explanation action sends numeric crop/report inputs,
 not addresses, coordinates, crop names or the guide conversation. Provider
 requests for selected-point data necessarily use location coordinates.
 
-## How the scoring works
+## Methods and limitations
 
 Temperature, rainfall and pH score 100 within each crop's approximate preferred
 range, decreasing linearly to zero at the absolute limits. Frost and fire use
@@ -159,7 +155,7 @@ web/        Custom interface, original SVGs, licensed photos and fonts
 data/       Crop profiles, source records and NSW boundary
 tests/      Python/JavaScript tests and fixtures
 scripts/    Cache warming, checks and demo utilities
-docs/       Architecture, methods, source references and showcase poster
+docs/       Architecture, methods, source references and showcase media
 app.py      Retained Streamlit interface
 ```
 
@@ -174,6 +170,7 @@ it through a tunnel as a public service.
 
 Original code and original FarmLens SVG assets are available under [MIT](LICENSE).
 Third-party photos, fonts, data and imagery retain their own terms; see
-[NOTICE.md](NOTICE.md) and the [asset inventory](web/assets/README.md).
+[NOTICE.md](NOTICE.md), the [asset inventory](web/assets/README.md) and
+[showcase credits](docs/showcase/README.md).
 
 **Indicative only. Check with a local agronomist.**
