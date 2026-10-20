@@ -35,6 +35,41 @@ def test_imagery_route_is_independent_and_missing_metadata_stays_unknown(tmp_pat
     assert "result" not in result
 
 
+
+def test_imagery_refresh_overrides_cache_only_and_saves_updated_metadata(tmp_path, fixture_json, monkeypatch):
+    from datetime import datetime, timezone
+
+    import requests
+    from conftest import FakeSession
+    from farmlens.imagery import ImageryClient
+
+    point = {"lat": -32.2569, "lon": 148.6011, "cache_only": True}
+    original = fixture_json("nsw_imagery_dates.json")
+    ImageryClient(tmp_path, session=FakeSession(original)).fetch(point["lat"], point["lon"])
+    updated = fixture_json("nsw_imagery_dates.json")
+    # Synthetic newer survey date exercises cache replacement, not a source claim.
+    updated["features"][0]["attributes"]["BlockStartDate"] = int(
+        datetime(2021, 2, 1, tzinfo=timezone.utc).timestamp() * 1000
+    )
+    session = FakeSession(updated)
+    monkeypatch.setattr(requests.Session, "get", lambda self, url, **kw: session.get(url, **kw))
+
+    cached = dispatch("/api/imagery", point, tmp_path)
+    assert cached["status"] == "cached"
+    assert cached["data"]["blocks"][0]["survey_date"] == "2009-04-03"
+    assert session.calls == []
+
+    refreshed = dispatch("/api/imagery", {**point, "refresh": True}, tmp_path)
+    assert refreshed["status"] == "live"
+    assert refreshed["data"]["blocks"][0]["survey_date"] == "2021-02-01"
+    assert len(session.calls) == 1
+
+    saved = dispatch("/api/imagery", point, tmp_path)
+    assert saved["status"] == "cached"
+    assert saved["data"] == refreshed["data"]
+    assert len(session.calls) == 1
+
+
 def test_explain_rejects_changed_or_missing_shortlist(tmp_path):
     with pytest.raises(ValueError, match="changed"):
         dispatch('/api/explain',{'lat':-32.2569,'lon':148.6011,'cache_only':True,'fingerprint':'old'},tmp_path)

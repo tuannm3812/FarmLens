@@ -132,7 +132,7 @@ $('open-water-panel').onclick=()=>{selectTab(false);$('water-panel').open=true;$
 function render(data){
  state.response=data;const {result:r}=data,c=data.data.climate.data,s=data.data.soil.data,f=data.data.forecast.data;
  state.pointValid=true;updateSelection();
- imageryPanel?.setContext({...state.point,cache_only:$('cache-only').checked});
+ imageryPanel?.setContext({...state.point,cache_only:data.point.cache_only,refresh:data.point.refresh});
  companion?.setContext(data);
  try{const saved=FarmLensNavigation.encode(state.point,scenario());if(saved)sessionStorage.setItem('farmlens.selection.v1',saved);}catch{/* Storage may be disabled; exploration still works. */}
  budgetPlanner?.setContext({...state.point,irrigation:$('water').value});

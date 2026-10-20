@@ -61,3 +61,53 @@ test('new context clears old metadata and ignores late completion', async () => 
   loader.select(null);
   assert.equal(updates.at(-1),null);
 });
+
+
+test('mounted imagery forwards explicit refresh once and keeps cached browsing offline', async () => {
+  const vm = require('node:vm');
+  const fs = require('node:fs');
+  const elements = new Map();
+  const host = {
+    querySelector(selector) {
+      if (!elements.has(selector)) elements.set(selector, {removeAttribute(){}});
+      return elements.get(selector);
+    },
+    replaceChildren(){elements.clear();},
+  };
+  const nodes = {
+    'land-imagery':host,
+    'imagery-dialog':{open:false,addEventListener(){}},
+    'close-imagery':{},
+    'imagery-large':{removeAttribute(){}},
+    'imagery-date-detail':{},
+  };
+  const scope = {
+    module:{exports:{}},document:{getElementById:id=>nodes[id]},
+    URLSearchParams,AbortController,setTimeout,clearTimeout,
+  };
+  vm.runInNewContext(fs.readFileSync(require.resolve('../web/imagery.js'),'utf8'),scope);
+  const requests = [];
+  const view = scope.module.exports.mount(async (path,point,signal) => {
+    requests.push({path,point,signal});
+    return {status:'cached',data:{blocks:[{survey_date:'2009-04-03'}]}};
+  });
+  const point = {lat:-32.2569,lon:148.6011,cache_only:true};
+  try {
+    view.setContext({...point,refresh:true});
+    assert.equal(requests[0].path,'/api/imagery');
+    assert.equal(requests[0].point.refresh,true);
+    assert.equal(requests[0].point.cache_only,true);
+    assert.equal(requests[0].point.lat,point.lat);
+    assert.equal(requests[0].point.lon,point.lon);
+    await Promise.resolve();
+    assert.match(host.querySelector('[data-imagery-date]').textContent,/2009/);
+
+    view.setContext(point);
+    assert.equal(requests.length,2);
+    assert.equal(requests[0].signal.aborted,true);
+    assert.equal(requests[1].point.refresh,false);
+    assert.equal(requests[1].point.cache_only,true);
+  } finally {
+    view.setContext(null);
+  }
+});

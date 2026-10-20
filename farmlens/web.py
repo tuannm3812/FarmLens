@@ -62,7 +62,7 @@ def dispatch(path, payload, cache_dir=CACHE_DIR):
         raise RequestError("Unknown request")
     point=validate_scenario(payload)
     if path == "/api/imagery":
-        return asdict(ImageryClient(cache_dir, cache_only=point["cache_only"])
+        return asdict(ImageryClient(cache_dir, cache_only=point["cache_only"] and not point["refresh"])
                       .fetch(point["lat"], point["lon"], refresh=point["refresh"]))
     if path == '/api/budget':
         try:

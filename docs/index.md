@@ -6,6 +6,7 @@ checking the evidence behind them.
 | Read | Purpose |
 | --- | --- |
 | [Quick start](../README.md#run-locally) | Install and run the local app |
+| [Product design](design.md) | Visual identity, page structure, components and evidence presentation |
 | [Architecture](2_architecture.md) | Components, data flow and privacy boundaries |
 | [Methods and limitations](technical-reference.md) | Scoring, soil, climate, imagery and scenario assumptions |
 | [Crop data dictionary](../data/README.md) | Units, proxy species, parameters and provenance |

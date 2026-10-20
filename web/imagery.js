@@ -112,7 +112,7 @@
           '. Block date at the pin; surrounding imagery may differ.';
         dialog.showModal();
       };
-      loader.select({lat:point.lat,lon:point.lon,cache_only:!!point.cache_only});
+      loader.select({lat:point.lat,lon:point.lon,cache_only:!!point.cache_only,refresh:!!point.refresh});
       load();
     }
     return {setContext};
